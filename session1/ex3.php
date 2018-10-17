@@ -10,7 +10,7 @@
 		echo "------------***---------------<br>";
 		$i = 1;
 		foreach($arr as $arrNew) {
-			echo $i.', ',$arrNew['name'].' - '.$arrNew['birthday'].' - '.$arrNew['email'].'<br>';
+			echo $i.', '.$arrNew['name'].' - '.$arrNew['birthday'].' - '.$arrNew['email'].'<br>';
 			$i++;
 		}
 	}
