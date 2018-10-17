@@ -35,11 +35,11 @@
 		}
 		return $arr;
 	}
-	function addMember($arr, $key,$name, $birthday, $email){
+	function addMember($arr, $key, $name, $birthday, $email){
 		// Add mot phan tu moi vao mang theo du lieu
-		$arr[$countArr]['name'] = $name;
-		$arr[$countArr]['birthday'] = $birthday;
-		$arr[$countArr]['email'] = $email;
+		$arr[$key]['name'] = $name;
+		$arr[$key]['birthday'] = $birthday;
+		$arr[$key]['email'] = $email;
 		return $arr;
 	}
 	function checkBirthdayAndChangeEmail($arr, $birthday, $email){
