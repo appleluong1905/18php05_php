@@ -5,6 +5,11 @@
 </head>
 <body>
 	<?php 
+		$server = 'localhost'; //$server = '127.0.0.1';
+		$username = 'root';
+		$password = 'none'; //$password = '';
+		$database = '18php05_demo';
+		$connect = mysqli_connect($server, $username, $password, $database);
 		// Khoi tao 2 bien loi bang "";
 		$errName = "";
 		$errEmail = "";
@@ -33,6 +38,9 @@
 			// }
 			if($check) {
 				$register = 'Register success!';
+				$sql = "INSERT INTO users(name, email) 
+				VALUES('$name', '$email')";
+				mysqli_query($connect, $sql);
 			}
 		}
 	?>
