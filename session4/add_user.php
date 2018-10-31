@@ -36,20 +36,30 @@
 			// if($name != '' && $email != '') {
 			// 	$register = 'Register success!';
 			// }
+			//var_dump($_FILES);exit();
+			$imageAvatar = $_FILES['avatar'];
+			// 1. lay duoc ten anh de luu vao database
+			$avatar = $imageAvatar['name'];
+			$pathSave = 'uploads/'.$avatar;
+			// 2. Upload anh len thu muc luu tru
+			move_uploaded_file($imageAvatar['tmp_name'], $pathSave);
 			if($check) {
 				$register = 'Register success!';
-				$sql = "INSERT INTO users(name, email) 
-				VALUES('$name', '$email')";
+				$sql = "INSERT INTO users(name, email, avatar) 
+				VALUES('$name', '$email', '$avatar')";
 				mysqli_query($connect, $sql);
 			}
 		}
 	?>
 	<p><?php echo $register?></p>
-	<form name="AddUser" action="#" method="post">
+	<form name="AddUser" action="#" method="post" enctype="multipart/form-data">
 		<p>Name:<input type="text" name="name" value="<?php echo $name;?>"></p>
 		<span><?php echo $errName;?></span>
 		<p>Email:<input type="text" name="email" value="<?php echo $email;?>"></p>
 		<span><?php echo $errEmail;?></span>
+		<p> Avatar:
+			<input type="file" name="avatar">
+		</p>
 		<p><input type="submit" name="add_user" value="ADD USER"></p>
 	</form>
 </body>

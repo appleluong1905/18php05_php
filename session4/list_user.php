@@ -10,7 +10,7 @@
 		while ($row = $result->fetch_assoc()) {
 			$id = $row['id'];
 			echo $row['id'].' - '.$row['name'].' - '.$row['email'];
-			echo "<a href='delete_user.php?id=$id'>DELETE</a>";
+			echo "<a href='delete_user.php?ID_delete=$id'>DELETE</a>";
 			echo "| <a href='edit_user.php?id=$id'>EDIT</a>";
 			echo '<br>';
 		}

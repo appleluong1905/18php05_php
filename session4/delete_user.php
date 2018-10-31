@@ -5,7 +5,7 @@
 	$database = '18php05_demo';
 	$connect = mysqli_connect($server, $username, $password, $database);
 	// GET data from URL
-	$id = $_GET['id'];
+	$id = $_GET['ID_delete'];
 	$sql = "DELETE FROM users WHERE id = $id";
 	mysqli_query($connect, $sql);
 	// Redirect

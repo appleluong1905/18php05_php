@@ -9,6 +9,7 @@
 	} else {
 		echo "Connect success!";
 	}
+	mysqli_set_charset($connect,"utf8");
 	// demo
 	$sql = "INSERT INTO users(name, email) 
 	VALUES('TEST ok ok', 'testok@gmail.com')";
