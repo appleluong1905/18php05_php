@@ -160,7 +160,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="top-nav.html"><i class="fa fa-circle-o"></i> List user</a></li>
-            <li class="active"><a href="boxed.html"><i class="fa fa-circle-o"></i> Add user</a></li>
+            <li class="active"><a href="add_user.php"><i class="fa fa-circle-o"></i> Add user</a></li>
           </ul>
         </li>
       </ul>
