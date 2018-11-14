@@ -1,6 +1,7 @@
 <?php 
 	include 'model/home_model.php';
 	include 'model/news_model.php';
+	include 'controller/news_controller.php';
 	class HomeController {
 		//public function xulyYeucau();
 		public function handleReqquest() {
@@ -24,28 +25,10 @@
 						break;
 				}
 			} elseif($controller == 'news') {
-				switch ($action) {
-					case 'listNews':
-						# code...
-						// lay thong tin trang danh sach news
-						// Model lay thong tin trang danh sach news
-						$newsList = new NewsModel();
-						$getNewsList = $newsList->getNewsList();
-						//Do du lieu ra views
-						include 'views/news/getNewsList.php';
-						break;
-					case 'newsDetail':
-						# code...
-						$newsID = $_GET['id'];
-						$newsList = new NewsModel();
-						$getNewsDetail = $newsList->getNewsDetail($newsID);
-						//Do du lieu ra views
-						include 'views/news/getNewsDetail.php';
-						break;
-					default:
-						# code...
-						break;
-				}
+				
+				$newsController = new NewsController();
+				$newsController->handleReqquest($action);
+
 			} elseif($controller == 'products') {
 				switch ($action) {
 					case 'listProducts':
