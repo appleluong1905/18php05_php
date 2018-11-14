@@ -1,13 +1,13 @@
 <?php 
-	class User {
+	include 'connect.php';
+	class User extends Connect {
 		public function addUser($name){
-			$connect = mysqli_connect('localhost', 'root', 'none',
-				'18php05_oop_basic');
 			$sql = "INSERT INTO users(name) VALUES('$name')";
-			mysqli_query($connect, $sql);
+			mysqli_query($this->connectDB(), $sql);
 		}
 		public function listUser(){
-
+			$sql = "SELECT * FROM users";
+			return mysqli_query($this->connectDB(), $sql);
 		}
 	}
 ?>

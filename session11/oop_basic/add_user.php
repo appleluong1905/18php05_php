@@ -4,9 +4,10 @@ include 'user.php';
 		$name = $_POST['name'];
 		$user = new User();
 		$user->addUser($name);
-		header("Location: listUser.php");
+		header("Location: list_user.php");
 	}
 ?>
+
 <h1>Add user</h1>
 <form method="post">
 	<p>Name:<input type="text" name="name"></p>
